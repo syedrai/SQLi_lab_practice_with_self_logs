@@ -1,0 +1,80 @@
+2025-09-29 09:25:10,137 - INFO - [31m[1mWARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.[0m
+ * Running on all addresses (0.0.0.0)
+ * Running on http://127.0.0.1:5000
+ * Running on http://10.28.233.174:5000
+2025-09-29 09:25:10,138 - INFO - [33mPress CTRL+C to quit[0m
+2025-09-29 09:25:10,141 - INFO -  * Restarting with stat
+2025-09-29 09:25:10,604 - WARNING -  * Debugger is active!
+2025-09-29 09:25:10,612 - INFO -  * Debugger PIN: 754-677-966
+2025-09-29 09:25:15,167 - INFO - 127.0.0.1 - - [29/Sep/2025 09:25:15] "GET /logs HTTP/1.1" 200 -
+2025-09-29 09:25:15,242 - INFO - 127.0.0.1 - - [29/Sep/2025 09:25:15] "[33mGET /favicon.ico HTTP/1.1[0m" 404 -
+2025-09-29 09:25:19,481 - INFO - 127.0.0.1 - - [29/Sep/2025 09:25:19] "GET / HTTP/1.1" 200 -
+2025-09-29 09:25:19,566 - INFO - 127.0.0.1 - - [29/Sep/2025 09:25:19] "[33mGET /favicon.ico HTTP/1.1[0m" 404 -
+2025-09-29 09:25:22,418 - ERROR - 10.28.233.174 - - [29/Sep/2025 09:25:22] code 400, message Bad HTTP/0.9 request type ('\x16\x03\x01\x06')
+2025-09-29 09:25:22,637 - ERROR - 10.28.233.174 - - [29/Sep/2025 09:25:22] code 400, message Bad request version ('\x99\x9b»b=<A¢Î¡kËÐLF\x1aÈ\x15dVË6/\x03e+\x983')
+2025-09-29 09:25:24,630 - INFO - 10.28.233.174 - - [29/Sep/2025 09:25:24] "GET / HTTP/1.1" 200 -
+2025-09-29 09:25:24,696 - INFO - 10.28.233.174 - - [29/Sep/2025 09:25:24] "[33mGET /favicon.ico HTTP/1.1[0m" 404 -
+2025-09-29 09:25:49,160 - INFO - [2025-09-29 09:25:49] Login Attempt - Vulnerable login attempt - Username: ' OR '1'='1 , Password: ' OR '1'='1  - IP: 10.28.233.174
+2025-09-29 09:25:49,164 - INFO - [2025-09-29 09:25:49] SQL Injection Attempt - SQL Query executed: SELECT * FROM users WHERE username = '' OR '1'='1 ' AND password = '' OR '1'='1 ' - IP: 10.28.233.174
+2025-09-29 09:25:49,166 - INFO - 10.28.233.174 - - [29/Sep/2025 09:25:49] "POST /login-vulnerable HTTP/1.1" 200 -
+2025-09-29 09:25:53,225 - INFO - 10.28.233.174 - - [29/Sep/2025 09:25:53] "GET / HTTP/1.1" 200 -
+2025-09-29 09:26:09,913 - INFO - [2025-09-29 09:26:09] Login Attempt - Vulnerable login attempt - Username: anything, Password: admin'-- - IP: 10.28.233.174
+2025-09-29 09:26:09,915 - INFO - [2025-09-29 09:26:09] SQL Injection Attempt - SQL Query executed: SELECT * FROM users WHERE username = 'anything' AND password = 'admin'--' - IP: 10.28.233.174
+2025-09-29 09:26:09,916 - INFO - 10.28.233.174 - - [29/Sep/2025 09:26:09] "POST /login-vulnerable HTTP/1.1" 200 -
+2025-09-29 09:26:13,592 - INFO - 10.28.233.174 - - [29/Sep/2025 09:26:13] "GET / HTTP/1.1" 200 -
+2025-09-29 09:26:52,108 - INFO - [2025-09-29 09:26:52] Login Attempt - Vulnerable login attempt - Username: ' OR '1'='1, Password: anything - IP: 127.0.0.1
+2025-09-29 09:26:52,109 - INFO - [2025-09-29 09:26:52] SQL Injection Attempt - SQL Query executed: SELECT * FROM users WHERE username = '' OR '1'='1' AND password = 'anything' - IP: 127.0.0.1
+2025-09-29 09:26:52,113 - INFO - 127.0.0.1 - - [29/Sep/2025 09:26:52] "POST /login-vulnerable HTTP/1.1" 200 -
+2025-09-29 09:26:55,127 - INFO - [2025-09-29 09:26:55] Login Attempt - Vulnerable login attempt - Username: admin'--, Password: anything - IP: 127.0.0.1
+2025-09-29 09:26:55,128 - INFO - [2025-09-29 09:26:55] SQL Injection Attempt - SQL Query executed: SELECT * FROM users WHERE username = 'admin'--' AND password = 'anything' - IP: 127.0.0.1
+2025-09-29 09:26:55,129 - INFO - 127.0.0.1 - - [29/Sep/2025 09:26:55] "POST /login-vulnerable HTTP/1.1" 200 -
+2025-09-29 09:26:58,140 - INFO - [2025-09-29 09:26:58] Login Attempt - Vulnerable login attempt - Username: ' OR 1=1--, Password: anything - IP: 127.0.0.1
+2025-09-29 09:26:58,141 - INFO - [2025-09-29 09:26:58] SQL Injection Attempt - SQL Query executed: SELECT * FROM users WHERE username = '' OR 1=1--' AND password = 'anything' - IP: 127.0.0.1
+2025-09-29 09:26:58,169 - INFO - 127.0.0.1 - - [29/Sep/2025 09:26:58] "POST /login-vulnerable HTTP/1.1" 200 -
+2025-09-29 09:27:00,480 - INFO - 10.28.233.174 - - [29/Sep/2025 09:27:00] "GET / HTTP/1.1" 200 -
+2025-09-29 09:27:01,183 - INFO - [2025-09-29 09:27:01] Login Attempt - Vulnerable login attempt - Username: ' UNION SELECT 1,2,3--, Password: anything - IP: 127.0.0.1
+2025-09-29 09:27:01,184 - INFO - [2025-09-29 09:27:01] SQL Injection Attempt - SQL Query executed: SELECT * FROM users WHERE username = '' UNION SELECT 1,2,3--' AND password = 'anything' - IP: 127.0.0.1
+2025-09-29 09:27:01,211 - INFO - [2025-09-29 09:27:01] SQL Injection Error - SQL Error: SELECTs to the left and right of UNION do not have the same number of result columns - IP: 127.0.0.1
+2025-09-29 09:27:01,212 - INFO - 127.0.0.1 - - [29/Sep/2025 09:27:01] "POST /login-vulnerable HTTP/1.1" 200 -
+2025-09-29 09:27:01,512 - INFO - 10.28.233.174 - - [29/Sep/2025 09:27:01] "GET / HTTP/1.1" 200 -
+2025-09-29 09:27:02,006 - INFO - 10.28.233.174 - - [29/Sep/2025 09:27:02] "GET / HTTP/1.1" 200 -
+2025-09-29 09:27:04,227 - INFO - [2025-09-29 09:27:04] Login Attempt - Vulnerable login attempt - Username: ' OR username LIKE '%admin%'--, Password: anything - IP: 127.0.0.1
+2025-09-29 09:27:04,229 - INFO - [2025-09-29 09:27:04] SQL Injection Attempt - SQL Query executed: SELECT * FROM users WHERE username = '' OR username LIKE '%admin%'--' AND password = 'anything' - IP: 127.0.0.1
+2025-09-29 09:27:04,257 - INFO - 127.0.0.1 - - [29/Sep/2025 09:27:04] "POST /login-vulnerable HTTP/1.1" 200 -
+2025-09-29 09:27:07,273 - INFO - [2025-09-29 09:27:07] Login Attempt - Vulnerable login attempt - Username: '; DROP TABLE users--, Password: anything - IP: 127.0.0.1
+2025-09-29 09:27:07,274 - INFO - [2025-09-29 09:27:07] SQL Injection Attempt - SQL Query executed: SELECT * FROM users WHERE username = ''; DROP TABLE users--' AND password = 'anything' - IP: 127.0.0.1
+2025-09-29 09:27:07,275 - INFO - [2025-09-29 09:27:07] SQL Injection Error - SQL Error: You can only execute one statement at a time. - IP: 127.0.0.1
+2025-09-29 09:27:07,275 - INFO - 127.0.0.1 - - [29/Sep/2025 09:27:07] "POST /login-vulnerable HTTP/1.1" 200 -
+2025-09-29 09:27:10,284 - INFO - [2025-09-29 09:27:10] Login Attempt - Vulnerable login attempt - Username: ' OR '1'='1' OR ', Password: anything - IP: 127.0.0.1
+2025-09-29 09:27:10,285 - INFO - [2025-09-29 09:27:10] SQL Injection Attempt - SQL Query executed: SELECT * FROM users WHERE username = '' OR '1'='1' OR '' AND password = 'anything' - IP: 127.0.0.1
+2025-09-29 09:27:10,286 - INFO - 127.0.0.1 - - [29/Sep/2025 09:27:10] "POST /login-vulnerable HTTP/1.1" 200 -
+2025-09-29 09:27:13,298 - INFO - [2025-09-29 09:27:13] Search SQL Injection - Search query: SELECT * FROM users WHERE username LIKE '%' UNION SELECT id,username,password,email FROM users--%' OR email LIKE '%' UNION SELECT id,username,password,email FROM users--%' - IP: 127.0.0.1
+2025-09-29 09:27:13,327 - INFO - 127.0.0.1 - - [29/Sep/2025 09:27:13] "GET /search?query='+UNION+SELECT+id,username,password,email+FROM+users-- HTTP/1.1" 200 -
+2025-09-29 09:27:16,337 - INFO - [2025-09-29 09:27:16] Search SQL Injection - Search query: SELECT * FROM users WHERE username LIKE '%test' OR '1'='1'--%' OR email LIKE '%test' OR '1'='1'--%' - IP: 127.0.0.1
+2025-09-29 09:27:16,345 - INFO - 127.0.0.1 - - [29/Sep/2025 09:27:16] "GET /search?query=test'+OR+'1'%3D'1'-- HTTP/1.1" 200 -
+2025-09-29 09:27:19,358 - INFO - [2025-09-29 09:27:19] Search SQL Injection - Search query: SELECT * FROM users WHERE username LIKE '%' AND 1=2 UNION SELECT 1,'admin','hacked','hacked@evil.com'--%' OR email LIKE '%' AND 1=2 UNION SELECT 1,'admin','hacked','hacked@evil.com'--%' - IP: 127.0.0.1
+2025-09-29 09:27:19,364 - INFO - 127.0.0.1 - - [29/Sep/2025 09:27:19] "GET /search?query='+AND+1%3D2+UNION+SELECT+1,'admin','hacked','hacked%40evil.com'-- HTTP/1.1" 200 -
+2025-09-29 09:27:22,428 - INFO - 127.0.0.1 - - [29/Sep/2025 09:27:22] "GET /logs HTTP/1.1" 200 -
+2025-09-29 09:27:39,329 - INFO - [2025-09-29 09:27:39] Login Attempt - Vulnerable login attempt - Username:  admin'--, Password:  admin'-- - IP: 10.28.233.174
+2025-09-29 09:27:39,329 - INFO - [2025-09-29 09:27:39] SQL Injection Attempt - SQL Query executed: SELECT * FROM users WHERE username = ' admin'--' AND password = ' admin'--' - IP: 10.28.233.174
+2025-09-29 09:27:39,331 - INFO - 10.28.233.174 - - [29/Sep/2025 09:27:39] "POST /login-vulnerable HTTP/1.1" 200 -
+2025-09-29 09:27:41,212 - INFO - 10.28.233.174 - - [29/Sep/2025 09:27:41] "GET / HTTP/1.1" 200 -
+2025-09-29 09:28:00,760 - INFO - [2025-09-29 09:28:00] Login Attempt - Vulnerable login attempt - Username:  ' OR '1'='1' OR ', Password:  ' OR '1'='1' OR ' - IP: 10.28.233.174
+2025-09-29 09:28:00,762 - INFO - [2025-09-29 09:28:00] SQL Injection Attempt - SQL Query executed: SELECT * FROM users WHERE username = ' ' OR '1'='1' OR '' AND password = ' ' OR '1'='1' OR '' - IP: 10.28.233.174
+2025-09-29 09:28:00,763 - INFO - 10.28.233.174 - - [29/Sep/2025 09:28:00] "POST /login-vulnerable HTTP/1.1" 200 -
+2025-09-29 09:28:04,963 - INFO - 10.28.233.174 - - [29/Sep/2025 09:28:04] "GET / HTTP/1.1" 200 -
+2025-09-29 09:28:26,711 - INFO - [2025-09-29 09:28:26] Search SQL Injection - Search query: SELECT * FROM users WHERE username LIKE '%' UNION SELECT id,username,password,email FROM users--%' OR email LIKE '%' UNION SELECT id,username,password,email FROM users--%' - IP: 10.28.233.174
+2025-09-29 09:28:26,715 - INFO - 10.28.233.174 - - [29/Sep/2025 09:28:26] "GET /search?query='+UNION+SELECT+id,username,password,email+FROM+users-- HTTP/1.1" 200 -
+2025-09-29 09:28:30,094 - INFO - 10.28.233.174 - - [29/Sep/2025 09:28:30] "GET / HTTP/1.1" 200 -
+2025-09-29 09:28:34,873 - INFO - [2025-09-29 09:28:34] Search SQL Injection - Search query: SELECT * FROM users WHERE username LIKE '%user 1%' OR email LIKE '%user 1%' - IP: 10.28.233.174
+2025-09-29 09:28:34,881 - INFO - 10.28.233.174 - - [29/Sep/2025 09:28:34] "GET /search?query=user+1 HTTP/1.1" 200 -
+2025-09-29 09:28:36,836 - INFO - 10.28.233.174 - - [29/Sep/2025 09:28:36] "GET / HTTP/1.1" 200 -
+2025-09-29 09:28:44,003 - INFO - [2025-09-29 09:28:44] Search SQL Injection - Search query: SELECT * FROM users WHERE username LIKE '% test' OR '1'='1'--%' OR email LIKE '% test' OR '1'='1'--%' - IP: 10.28.233.174
+2025-09-29 09:28:44,009 - INFO - 10.28.233.174 - - [29/Sep/2025 09:28:44] "GET /search?query=+test'+OR+'1'%3D'1'-- HTTP/1.1" 200 -
+2025-09-29 09:28:46,916 - INFO - 10.28.233.174 - - [29/Sep/2025 09:28:46] "GET / HTTP/1.1" 200 -
+2025-09-29 09:29:05,874 - INFO - [2025-09-29 09:29:05] Safe Login - Safe login attempt - Username: ' OR '1'='1 - IP: 10.28.233.174
+2025-09-29 09:29:05,875 - INFO - 10.28.233.174 - - [29/Sep/2025 09:29:05] "POST /login-safe HTTP/1.1" 200 -
+2025-09-29 09:29:07,665 - INFO - 10.28.233.174 - - [29/Sep/2025 09:29:07] "GET / HTTP/1.1" 200 -
+2025-09-29 09:29:15,701 - INFO - [2025-09-29 09:29:15] Safe Login - Safe login attempt - Username:  ' OR '1'='1' OR ' - IP: 10.28.233.174
+2025-09-29 09:29:15,704 - INFO - 10.28.233.174 - - [29/Sep/2025 09:29:15] "POST /login-safe HTTP/1.1" 200 -
+2025-09-29 09:29:19,213 - INFO - 10.28.233.174 - - [29/Sep/2025 09:29:19] "GET / HTTP/1.1" 200 -
