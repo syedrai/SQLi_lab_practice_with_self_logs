@@ -52,7 +52,7 @@ This lab helps developers, security students, and penetration testers understand
 
 1. Clone the repository
 ```bash
-git clone https://github.com/yourusername/flask-sqli-lab.git
+git clone https://github.com/syedrai/flask-sqli-lab.git
 cd flask-sqli-lab
 ```
 
